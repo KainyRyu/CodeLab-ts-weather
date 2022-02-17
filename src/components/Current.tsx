@@ -12,12 +12,9 @@ export default function Current() {
   } = CURRENT;
 
   useEffect(() => {
-    const data = async () => {
-      const fetch = await getWeatherByCityName('london');
-      setCurrentWeather(fetch);
-    };
-
-    // data();
+    getWeatherByCityName('london')
+      .then(data => setCurrentWeather(data))
+      .catch(e => console.log(e));
   }, []);
 
   return (
