@@ -1,12 +1,11 @@
 import Styled from 'styled-components';
-import { CITIES } from 'data';
 
 export default function List() {
   return (
     <StyledList>
-      {CITIES.map(({ location }) => {
+      {/* {CITIES.map(({ location }) => {
         return <StyledButton name={location}>{location}</StyledButton>;
-      })}
+      })} */}
     </StyledList>
   );
 }
