@@ -1,6 +1,4 @@
-// import { useState } from 'react';
-
-// import { getWeatherByCityName } from '../apis';
+import useWeather from 'hooks/useWeather';
 import { CURRENT } from '../data';
 
 interface Props {
@@ -8,8 +6,8 @@ interface Props {
 }
 
 export default function Current({ city = 'london' }: Props) {
-  // const [currentWeather, setCurrentWeather] = useState();
-
+  const { status, data, error, isFetching } = useWeather('london');
+  console.log({ data, status, error, isFetching });
   const {
     weather,
     name,
