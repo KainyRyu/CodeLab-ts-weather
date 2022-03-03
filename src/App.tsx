@@ -1,9 +1,9 @@
 import './App.css';
+import Styled from 'styled-components';
 // import Main from './pages/Main';
 import Main from './pages/MainPage';
 import List from './components/List';
-import Styled from 'styled-components';
-import { GlobalProvider } from 'contexts/GlobalContext';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 // - 지역 리스트는 hard coding
 //   - 지역이름, 좌표값
@@ -14,15 +14,15 @@ import { GlobalProvider } from 'contexts/GlobalContext';
 // - 지역 삭제
 
 function App() {
-  console.log('this is weird');
+  const queryClient = new QueryClient();
   return (
     <div className="App">
-      <GlobalProvider>
+      <QueryClientProvider client={queryClient}>
         <Flex>
           <Main />
           <List />
         </Flex>
-      </GlobalProvider>
+      </QueryClientProvider>
     </div>
   );
 }

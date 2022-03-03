@@ -30,8 +30,6 @@ export default function Current({ city = 'london' }: Props) {
       <h3>{weather[0].description}</h3>
       <h3>temp: {temp}</h3>
       <h3>humidity: {humidity}</h3>
-      <h3>{}</h3>
-      <h3>{}</h3>
     </div>
   );
 }
