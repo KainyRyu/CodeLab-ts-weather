@@ -8,3 +8,5 @@ export const removeDataFromSessionStorage = (key: string) =>
   sessionStorage.removeItem(key);
 
 export const resetSessionStorage = () => sessionStorage.clear();
+
+

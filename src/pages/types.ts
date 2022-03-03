@@ -1,7 +1,6 @@
-export type CurrentWeather = {
-  base: string,
+export interface CurrentWeather {
+  base: string;
   clouds: { all: number };
-  all: number;
   cod: number;
   coord: { lon: number; lat: number };
   dt: number;
@@ -23,4 +22,4 @@ export type CurrentWeather = {
   };
   weather: [{ id: number; main: string; description: string; icon: string }];
   wind: { speed: number; deg: number; gust: number };
-};
+}

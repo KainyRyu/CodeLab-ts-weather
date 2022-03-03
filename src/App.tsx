@@ -1,6 +1,9 @@
 import './App.css';
 // import Main from './pages/Main';
-import logo from './logo.svg';
+import Main from './pages/MainPage';
+import List from './components/List';
+import Styled from 'styled-components';
+import { GlobalProvider } from 'contexts/GlobalContext';
 
 // - 지역 리스트는 hard coding
 //   - 지역이름, 좌표값
@@ -11,24 +14,27 @@ import logo from './logo.svg';
 // - 지역 삭제
 
 function App() {
+  console.log('this is weird');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalProvider>
+        <Flex>
+          <Main />
+          <List />
+        </Flex>
+      </GlobalProvider>
     </div>
   );
 }
+
+const Flex = Styled.div`
+  display: flex;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
 
 export default App;
