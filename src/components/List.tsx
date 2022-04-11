@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { getDataFromLocalStorage, setLocalStorage } from 'helper';
 import { CITY } from 'data';
 
-export default function List() {
+interface ListProps {
+  setSelectedLocation: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function List({ setSelectedLocation }: ListProps) {
   useEffect(() => {
     setLocalStorage('locationList', JSON.stringify(CITY));
   }, []);
@@ -12,7 +16,7 @@ export default function List() {
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log(e.currentTarget);
+    console.log(e.currentTarget.value);
   };
 
   return (

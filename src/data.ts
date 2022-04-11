@@ -15,6 +15,8 @@ export const CITIES: { location: string }[] = [
   { location: 'newyork' },
 ];
 
+export const CITY: string[] = ['seoul', 'berlin', 'london', 'paris', 'newyork'];
+
 export const CURRENT = {
   base: 'stations',
   clouds: { all: 75 },

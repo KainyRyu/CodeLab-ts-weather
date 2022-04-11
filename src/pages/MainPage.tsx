@@ -6,6 +6,7 @@ export default function Main() {
   return (
     <Flex>
       <Current />
+      <h1>Selected</h1>
       <Selected />
     </Flex>
   );

@@ -1,12 +1,7 @@
-export const setSessionStorage = (key: string, value: any) =>
-  sessionStorage.setItem(key, value);
+export const setLocalStorage = (key: string, value: string) => localStorage.setItem(key, value);
 
-export const getDataFromSessionStorage = (key: string) =>
-  sessionStorage.getItem(key);
+export const getDataFromLocalStorage = (key: string) => localStorage.getItem(key);
 
-export const removeDataFromSessionStorage = (key: string) =>
-  sessionStorage.removeItem(key);
+export const removeDataFromLocalStorage = (key: string) => localStorage.removeItem(key);
 
-export const resetSessionStorage = () => sessionStorage.clear();
-
-
+export const resetLocalStorage = () => localStorage.clear();
