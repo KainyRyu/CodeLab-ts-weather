@@ -1,8 +1,8 @@
 # About CodeLab-weather-ts - On Going
-: Show weather information; Similar to a todo list project.\
-using open api: [openweathermap](https://openweathermap.org/api)
+- Show weather information; Similar to a todo list project.
+- using open api: [openweathermap](https://openweathermap.org/api)
+### 🥅 : to get familiar with TS
 
-**Goal: to get familiar with TS**
 
 
 ### features
