@@ -1,6 +1,6 @@
 import { useEffect, useContext, createContext } from 'react';
 import { CITIES } from 'data';
-import { getDataFromSessionStorage, setSessionStorage } from 'helper';
+import { getDataFromLocalStorage, setLocalStorage } from 'helper';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
@@ -10,10 +10,10 @@ const GlobalContext = createContext({});
 
 const GlobalProvider = ({ children }: Props) => {
   useEffect(() => {
-    setSessionStorage('locationList', CITIES);
+    setLocalStorage('locationList', JSON.stringify(CITIES));
   }, []);
 
-  const myList: string | null = getDataFromSessionStorage('locationList');
+  const myList: string | null = getDataFromLocalStorage('locationList');
 
   const addToList = () => {};
 
