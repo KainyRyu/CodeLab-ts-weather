@@ -1,9 +1,11 @@
-import react from 'React'
-import {render,screen} from '@testing-library/react'
-import Main from 'pages/MainPage'
+import React from 'React';
+import { render, screen } from '@testing-library/react';
+import Main from 'pages/MainPage';
 
-describe('<MainPage/>',()=>{
-  it('renders component correctly',()=>{
-    render(<Main/>)
-  })
-})
+describe('<MainPage/>', () => {
+  it('renders component correctly', () => {
+    const { container } = render(<Main />);
+
+    expect(container).toMatchSnapshot();
+  });
+});
