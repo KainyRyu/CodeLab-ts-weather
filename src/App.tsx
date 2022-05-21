@@ -17,15 +17,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <Flex>
+        <FlexContainer>
           <Main />
-        </Flex>
+        </FlexContainer>
       </div>
     </QueryClientProvider>
   );
 }
 
-const Flex = Styled.div`
+const FlexContainer = Styled.div`
   display: flex;
   background-color: #282c34;
   min-height: 100vh;

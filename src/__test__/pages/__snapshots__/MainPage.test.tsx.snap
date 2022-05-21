@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainPage/> renders component correctly 1`] = `
+<div>
+  <div
+    class="sc-gsDKAQ iSSkJZ"
+  >
+    <div>
+      Here, Now
+    </div>
+    <div
+      class="sc-bdvvtL hJgGXa"
+    >
+      <div
+        data-testid="location"
+      >
+        London
+      </div>
+      <div
+        data-testid="degrees"
+      >
+        30
+        ℃
+      </div>
+    </div>
+  </div>
+</div>
+`;

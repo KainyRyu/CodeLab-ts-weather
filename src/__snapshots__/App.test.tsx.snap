@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> renders component correctly 1`] = `
+.c2 {
+  width: 300px;
+  height: 300px;
+  border: white 1px solid;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,9 +46,24 @@ exports[`<App /> renders component correctly 1`] = `
       <div
         class="c1"
       >
-        <h1>
-          Selected
-        </h1>
+        <div>
+          Here, Now
+        </div>
+        <div
+          class="c2"
+        >
+          <div
+            data-testid="location"
+          >
+            London
+          </div>
+          <div
+            data-testid="degrees"
+          >
+            30
+            ℃
+          </div>
+        </div>
       </div>
     </div>
   </div>

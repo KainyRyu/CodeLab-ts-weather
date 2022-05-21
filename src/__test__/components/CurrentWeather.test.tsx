@@ -12,3 +12,4 @@ describe('<CurrentWeather/>', () => {
     expect(degrees).toBeInTheDocument();
   });
 });
+  
