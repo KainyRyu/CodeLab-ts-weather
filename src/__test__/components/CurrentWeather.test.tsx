@@ -4,12 +4,13 @@ import CurrentWeather from 'components/CurrentWeather';
 
 describe('<CurrentWeather/>', () => {
   it('renders component correctly', () => {
-    render(<CurrentWeather location="london" degrees={30} />);
+    render(<CurrentWeather location="london" degrees={30} wind={0} />);
 
-    const location = screen.getByTestId('location');
+    const location = screen.getByText('london');
     expect(location).toBeInTheDocument();
-    const degrees = screen.getByTestId('degrees');
+    const degrees = screen.getByText('30℃');
     expect(degrees).toBeInTheDocument();
+    const wind = screen.getByText('0m/s');
+    expect(wind).toBeInTheDocument();
   });
 });
-  

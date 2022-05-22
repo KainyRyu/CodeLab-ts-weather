@@ -52,16 +52,16 @@ exports[`<App /> renders component correctly 1`] = `
         <div
           class="c2"
         >
-          <div
-            data-testid="location"
-          >
+          <div>
             London
           </div>
-          <div
-            data-testid="degrees"
-          >
-            30
+          <div>
+            17.24
             ℃
+          </div>
+          <div>
+            5.66
+            m/s
           </div>
         </div>
       </div>
