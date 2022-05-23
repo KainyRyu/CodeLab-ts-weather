@@ -1,5 +1,6 @@
-import CurrentWeather from 'components/CurrentWeather';
 import Styled from 'styled-components';
+import CurrentWeather from 'components/CurrentWeather';
+import LocationList from 'components/LocationList';
 import data from 'lib/mocked_weather.json';
 
 /**
@@ -15,6 +16,7 @@ export default function Main() {
     <Flex>
       <div>Here, Now</div>
       <CurrentWeather location={data.name} degrees={data.main.temp} wind={data.wind.speed} />
+      <LocationList />
     </Flex>
   );
 }
