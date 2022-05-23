@@ -2,6 +2,7 @@ import './App.css';
 import Styled from 'styled-components';
 import Main from './pages/MainPage';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { GlobalProvider } from 'context/GlobalContext';
 
 // - 지역 리스트는 hard coding
 //   - 지역이름, 좌표값
@@ -16,11 +17,13 @@ function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <FlexContainer>
-          <Main />
-        </FlexContainer>
-      </div>
+      <GlobalProvider>
+        <div className="App">
+          <FlexContainer>
+            <Main />
+          </FlexContainer>
+        </div>
+      </GlobalProvider>
     </QueryClientProvider>
   );
 }
