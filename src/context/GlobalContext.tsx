@@ -1,24 +1,26 @@
-import React from 'react';
-import { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { getLocalStorage } from 'lib/helper';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-const GlobalContext = createContext({});
+interface GlobalValue {
+  cities: string[];
+  setCities: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+const GlobalContext = createContext<GlobalValue>({ cities: [], setCities: () => {} });
 
 function GlobalProvider({ children }: Props) {
   const cityListInit = ['london', 'berlin', 'seoul', 'paris', 'prague'];
-  const getCities: string | null = localStorage.getItem('cityList');
-  const setCities: (value: string) => void = (value: string) =>
-    localStorage.setItem('cityList', value);
+  const [cities, setCities] = useState(cityListInit);
 
   useEffect(() => {
-    setCities(JSON.stringify(cityListInit));
-  });
-  return (
-    <GlobalContext.Provider value={{ getCities, setCities }}>{children}</GlobalContext.Provider>
-  );
+    getLocalStorage('cities');
+  }, []);
+
+  return <GlobalContext.Provider value={{ cities, setCities }}>{children}</GlobalContext.Provider>;
 }
 
 const useGlobalContext = () => useContext(GlobalContext);

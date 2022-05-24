@@ -14,9 +14,8 @@ const Row = Styled.div`
 `;
 
 export default function LocationList() {
-  const { getCities } = useGlobalContext();
-  const cities = JSON.parse(getCities);
-  console.log(cities);
+  const { cities } = useGlobalContext();
+
   return (
     <Container>
       {cities?.map((city: string) => (
