@@ -1,6 +1,6 @@
 interface LocalStorageProps {
   readonly key: string;
-  readonly value?: {};
+  readonly value?: [];
 }
 
 export const getLocalStorage = (key: string) => localStorage.getItem(key);
