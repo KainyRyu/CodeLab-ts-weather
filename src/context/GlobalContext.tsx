@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getLocalStorage } from 'lib/helper';
+import { setLocalStorage } from 'lib/helper';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
@@ -17,8 +17,8 @@ function GlobalProvider({ children }: Props) {
   const [cities, setCities] = useState(cityListInit);
 
   useEffect(() => {
-    getLocalStorage('cities');
-  }, []);
+    setLocalStorage({ key: 'cities', value: cities });
+  }, [cities]);
 
   return <GlobalContext.Provider value={{ cities, setCities }}>{children}</GlobalContext.Provider>;
 }

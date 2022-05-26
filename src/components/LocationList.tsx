@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Styled from 'styled-components';
 import { useGlobalContext } from 'context/GlobalContext';
-import { setLocalStorage } from 'helper';
+import { getLocalStorage } from 'lib/helper';
 
 const Container = Styled.div`
   width: 300px;
@@ -20,8 +20,20 @@ export default function LocationList() {
   const handleDeleteButtonClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     const { target } = event;
-    setLocalStorage({ key: 'cities', value: cities.filter((city) => city !== target.name) });
+    setCities(cities.filter((city) => city !== (target as HTMLButtonElement).name));
   };
+
+  const getCityList = () => {
+    const list = getLocalStorage('cities');
+    if (!list) {
+      return cities;
+    }
+    return JSON.parse(list);
+  };
+
+  useEffect(() => {
+    setCities(getCityList());
+  }, []);
 
   return (
     <Container>
