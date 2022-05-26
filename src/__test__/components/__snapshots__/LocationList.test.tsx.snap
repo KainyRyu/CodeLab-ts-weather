@@ -1,9 +1,251 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<LocationList/> adds city 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL cgThLl"
+  >
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        london
+      </div>
+      <button
+        data-testid="london"
+        name="london"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        berlin
+      </div>
+      <button
+        data-testid="berlin"
+        name="berlin"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        seoul
+      </div>
+      <button
+        data-testid="seoul"
+        name="seoul"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        prague
+      </div>
+      <button
+        data-testid="prague"
+        name="prague"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        hongkong
+      </div>
+      <button
+        data-testid="hongkong"
+        name="hongkong"
+      >
+        X
+      </button>
+    </div>
+    <input
+      placeholder="add new location"
+      type="text"
+      value="hongkong"
+    />
+    <button>
+      add
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<LocationList/> deletes city 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL cgThLl"
+  >
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        london
+      </div>
+      <button
+        data-testid="london"
+        name="london"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        berlin
+      </div>
+      <button
+        data-testid="berlin"
+        name="berlin"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        seoul
+      </div>
+      <button
+        data-testid="seoul"
+        name="seoul"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        prague
+      </div>
+      <button
+        data-testid="prague"
+        name="prague"
+      >
+        X
+      </button>
+    </div>
+    <input
+      placeholder="add new location"
+      type="text"
+      value=""
+    />
+    <button>
+      add
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<LocationList/> gets location list from globalProvider 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL cgThLl"
+  >
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        london
+      </div>
+      <button
+        data-testid="london"
+        name="london"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        berlin
+      </div>
+      <button
+        data-testid="berlin"
+        name="berlin"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        seoul
+      </div>
+      <button
+        data-testid="seoul"
+        name="seoul"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        paris
+      </div>
+      <button
+        data-testid="paris"
+        name="paris"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="sc-gsDKAQ jAJQy"
+    >
+      <div>
+        prague
+      </div>
+      <button
+        data-testid="prague"
+        name="prague"
+      >
+        X
+      </button>
+    </div>
+    <input
+      placeholder="add new location"
+      type="text"
+      value=""
+    />
+    <button>
+      add
+    </button>
+  </div>
+</div>
+`;
+
 exports[`<LocationList/> renders component correctly 1`] = `
 <div>
   <div
     class="sc-bdvvtL cgThLl"
-  />
+  >
+    <input
+      placeholder="add new location"
+      type="text"
+      value=""
+    />
+    <button>
+      add
+    </button>
+  </div>
 </div>
 `;
