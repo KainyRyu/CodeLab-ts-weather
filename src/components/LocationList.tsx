@@ -37,8 +37,12 @@ export default function LocationList() {
     setCities(getCityList());
   }, []);
 
-  const handleInputChange = (event: React.InputHTMLAttributes<HTMLInputElement>) => {
-    event.preventDefault();
+  const handleInputChange = (value: string) => {
+    setValue(value);
+  };
+
+  const handleAddButton = () => {
+    setCities([...cities, value]);
   };
 
   return (
@@ -46,12 +50,13 @@ export default function LocationList() {
       {cities?.map((city: string) => (
         <Row key={city}>
           <div>{city}</div>
-          <button onClick={handleDeleteButtonClick} name={city}>
+          <button onClick={handleDeleteButtonClick} name={city} data-testid={city}>
             X
           </button>
         </Row>
       ))}
       <input
+        placeholder="add new location"
         type="text"
         onChange={(e) => {
           if (typeof handleInputChange === 'function') {
@@ -60,6 +65,7 @@ export default function LocationList() {
         }}
         value={value}
       />
+      <button onClick={handleAddButton}>add</button>
     </Container>
   );
 }
