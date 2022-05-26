@@ -3,7 +3,7 @@
 exports[`<MainPage/> renders component correctly 1`] = `
 <div>
   <div
-    class="sc-gsDKAQ iSSkJZ"
+    class="sc-hKwDye hwefAq"
   >
     <div>
       Here, Now
@@ -23,6 +23,9 @@ exports[`<MainPage/> renders component correctly 1`] = `
         m/s
       </div>
     </div>
+    <div
+      class="sc-gsDKAQ dGtaUY"
+    />
   </div>
 </div>
 `;

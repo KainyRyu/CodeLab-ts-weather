@@ -6,9 +6,6 @@ describe('<LocationList/>', () => {
   it('renders component correctly', () => {
     const { container } = render(<LocationList />);
 
-    const berlin = screen.getByText('berlin');
-    expect(berlin).toBeInTheDocument();
-
     expect(container).toMatchSnapshot();
   });
 });

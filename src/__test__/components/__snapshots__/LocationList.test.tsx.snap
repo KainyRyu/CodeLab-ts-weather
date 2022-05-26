@@ -2,22 +2,8 @@
 
 exports[`<LocationList/> renders component correctly 1`] = `
 <div>
-  <div>
-    <div>
-      london
-    </div>
-    <div>
-      berlin
-    </div>
-    <div>
-      seoul
-    </div>
-    <div>
-      paris
-    </div>
-    <div>
-      prague
-    </div>
-  </div>
+  <div
+    class="sc-bdvvtL cgThLl"
+  />
 </div>
 `;

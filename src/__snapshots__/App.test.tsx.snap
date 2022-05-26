@@ -7,6 +7,23 @@ exports[`<App /> renders component correctly 1`] = `
   border: white 1px solid;
 }
 
+.c3 {
+  width: 300px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: white 1px solid;
+  margin-top: 5px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -62,6 +79,70 @@ exports[`<App /> renders component correctly 1`] = `
           <div>
             5.66
             m/s
+          </div>
+        </div>
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div>
+              london
+            </div>
+            <button
+              name="london"
+            >
+              X
+            </button>
+          </div>
+          <div
+            class="c4"
+          >
+            <div>
+              berlin
+            </div>
+            <button
+              name="berlin"
+            >
+              X
+            </button>
+          </div>
+          <div
+            class="c4"
+          >
+            <div>
+              seoul
+            </div>
+            <button
+              name="seoul"
+            >
+              X
+            </button>
+          </div>
+          <div
+            class="c4"
+          >
+            <div>
+              paris
+            </div>
+            <button
+              name="paris"
+            >
+              X
+            </button>
+          </div>
+          <div
+            class="c4"
+          >
+            <div>
+              prague
+            </div>
+            <button
+              name="prague"
+            >
+              X
+            </button>
           </div>
         </div>
       </div>

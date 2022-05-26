@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Styled from 'styled-components';
 import { useGlobalContext } from 'context/GlobalContext';
 import { getLocalStorage } from 'lib/helper';
+import { useState } from 'react';
 
 const Container = Styled.div`
   width: 300px;
@@ -16,6 +17,7 @@ const Row = Styled.div`
 
 export default function LocationList() {
   const { cities, setCities } = useGlobalContext();
+  const [value, setValue] = useState('');
 
   const handleDeleteButtonClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -35,6 +37,10 @@ export default function LocationList() {
     setCities(getCityList());
   }, []);
 
+  const handleInputChange = (event: React.InputHTMLAttributes<HTMLInputElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <Container>
       {cities?.map((city: string) => (
@@ -45,6 +51,15 @@ export default function LocationList() {
           </button>
         </Row>
       ))}
+      <input
+        type="text"
+        onChange={(e) => {
+          if (typeof handleInputChange === 'function') {
+            handleInputChange(e.target.value);
+          }
+        }}
+        value={value}
+      />
     </Container>
   );
 }
