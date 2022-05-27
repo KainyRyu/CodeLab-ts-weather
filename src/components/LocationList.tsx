@@ -16,7 +16,7 @@ const Row = Styled.div`
 `;
 
 export default function LocationList() {
-  const { cities, setCities } = useGlobalContext();
+  const { cities, setCities, handleCityClick } = useGlobalContext();
   const [value, setValue] = useState('');
 
   const handleDeleteButtonClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -49,7 +49,9 @@ export default function LocationList() {
     <Container>
       {cities?.map((city: string) => (
         <Row key={city}>
-          <div>{city}</div>
+          <div onClick={() => handleCityClick(city)} data-name={city}>
+            {city}
+          </div>
           <button onClick={handleDeleteButtonClick} name={city} data-testid={city}>
             X
           </button>

@@ -87,10 +87,13 @@ exports[`<App /> renders component correctly 1`] = `
           <div
             class="c4"
           >
-            <div>
+            <div
+              data-name="london"
+            >
               london
             </div>
             <button
+              data-testid="london"
               name="london"
             >
               X
@@ -99,10 +102,13 @@ exports[`<App /> renders component correctly 1`] = `
           <div
             class="c4"
           >
-            <div>
+            <div
+              data-name="berlin"
+            >
               berlin
             </div>
             <button
+              data-testid="berlin"
               name="berlin"
             >
               X
@@ -111,10 +117,13 @@ exports[`<App /> renders component correctly 1`] = `
           <div
             class="c4"
           >
-            <div>
+            <div
+              data-name="seoul"
+            >
               seoul
             </div>
             <button
+              data-testid="seoul"
               name="seoul"
             >
               X
@@ -123,10 +132,13 @@ exports[`<App /> renders component correctly 1`] = `
           <div
             class="c4"
           >
-            <div>
+            <div
+              data-name="paris"
+            >
               paris
             </div>
             <button
+              data-testid="paris"
               name="paris"
             >
               X
@@ -135,15 +147,26 @@ exports[`<App /> renders component correctly 1`] = `
           <div
             class="c4"
           >
-            <div>
+            <div
+              data-name="prague"
+            >
               prague
             </div>
             <button
+              data-testid="prague"
               name="prague"
             >
               X
             </button>
           </div>
+          <input
+            placeholder="add new location"
+            type="text"
+            value=""
+          />
+          <button>
+            add
+          </button>
         </div>
       </div>
     </div>

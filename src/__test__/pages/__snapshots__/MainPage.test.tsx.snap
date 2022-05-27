@@ -25,7 +25,16 @@ exports[`<MainPage/> renders component correctly 1`] = `
     </div>
     <div
       class="sc-gsDKAQ dGtaUY"
-    />
+    >
+      <input
+        placeholder="add new location"
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </div>
   </div>
 </div>
 `;
