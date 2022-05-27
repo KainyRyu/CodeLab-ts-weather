@@ -1,5 +1,6 @@
-import useWeather from 'hooks/useWeather';
 import React from 'react';
+import Styled from 'styled-components';
+import useWeather from 'hooks/useWeather';
 
 interface Props {
   readonly selectedCity: string;
@@ -24,10 +25,10 @@ interface Error {
 }
 export default function SelectedCity({ selectedCity }: Props) {
   // const data = useWeather(selectedCity);
-  const { isError, isLoading,  data, error } = useWeather(selectedCity);
+  const { isError, isLoading, data, error } = useWeather(selectedCity);
   // const errorData = isError && (error as Error).response.data;
 
-  // console.log(data);
+  console.log(data);
   // return <div></div>;
 
   return isLoading ? (
@@ -42,9 +43,18 @@ export default function SelectedCity({ selectedCity }: Props) {
   ) : (
     <div>
       <h1>selectedCity: {data.name}</h1>
+      <WeatherImg
+        src={` http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+        alt="weather"
+      />
       <div>{data.weather[0].main}</div>
       <div>{data.main.temp}℃</div>
       <div>wind: {data.wind.speed}m/s</div>
     </div>
   );
 }
+
+const WeatherImg = Styled.img`
+  width: 100px;
+  height: 100px
+`;
