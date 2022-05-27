@@ -11,21 +11,26 @@ interface Props {
 }
 
 describe('<SelectedCity />', () => {
-  it('renders component correctly', () => {
-    const { container } = render(<SelectedCity selectedCity="seoul" />);
+  it('renders component correctly', async () => {
+    const queryClient = new QueryClient({
+      defaultOptions: {
+        queries: {
+          retry: false,
+        },
+      },
+    });
+    const { container } = render(
+      <QueryClientProvider client={queryClient}>
+        <SelectedCity selectedCity="seoul" />
+      </QueryClientProvider>,
+    );
 
     expect(container).toMatchSnapshot();
   });
 
   it("display seoul's weather", async () => {
     const wrapper = ({ children }: Props) => {
-      const queryClient = new QueryClient({
-        defaultOptions: {
-          queries: {
-            retry: false,
-          }
-        }
-      });
+      const queryClient = new QueryClient({});
       return (
         <QueryClientProvider client={queryClient}>
           <GlobalProvider>

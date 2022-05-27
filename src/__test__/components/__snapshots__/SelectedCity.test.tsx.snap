@@ -2,6 +2,8 @@
 
 exports[`<SelectedCity /> renders component correctly 1`] = `
 <div>
-  <div />
+  <div>
+    loading...
+  </div>
 </div>
 `;
