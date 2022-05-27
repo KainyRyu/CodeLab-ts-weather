@@ -8,13 +8,13 @@ interface Props {
 }
 
 describe('useQuery', () => {
-  it('fetch', async () => {
+  it('fetches weatherAPI correctly', async () => {
     const queryClient = new QueryClient();
     const wrapper = ({ children }: Props) => (
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
-    const { result, waitFor } = renderHook(() => useWeather('London'), { wrapper });
+    const { result, waitFor } = renderHook(() => useWeather('london'), { wrapper });
     await waitFor(() => result.current.isSuccess);
-    // expect(result.current.data).toEqual('London');
+    expect(result.current.data.name).toEqual('London');
   });
 });
