@@ -1,7 +1,5 @@
 import Styled from 'styled-components';
-import CurrentWeather from 'components/CurrentWeather';
 import LocationList from 'components/LocationList';
-import data from 'lib/mocked_weather.json';
 import SelectedCity from 'components/SelectedCity';
 import { useGlobalContext } from 'context/GlobalContext';
 
@@ -14,19 +12,34 @@ import { useGlobalContext } from 'context/GlobalContext';
  */
 
 export default function Main() {
-  const { selectedCity } = useGlobalContext();
+  const { selectedCity, weatherTheme } = useGlobalContext();
 
   return (
-    <Flex>
-      <div>Here, Now</div>
-      <CurrentWeather location={data.name} degrees={data.main.temp} wind={data.wind.speed} />
-      <LocationList />
+    <Flex theme={weatherTheme.theme}>
+      <p>TS Weather</p>
       {selectedCity.length > 0 && <SelectedCity selectedCity={selectedCity} />}
+      <LocationList />
     </Flex>
   );
 }
 
-const Flex = Styled.div`
+interface Props {
+  theme: {
+    color: string;
+    background: string;
+  };
+}
+
+const Flex = Styled.div<Props>`
+  ${(props) => props.theme}
   display: flex;
   flex-flow: column;
+  width: 100%;
+  padding: 30vw;
+  
+  @media (min-width: 600px) {
+    padding: 10vw;
+    flex-flow: row;
+    justify-content: space-evenly;
+  }
 `;

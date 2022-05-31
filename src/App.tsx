@@ -30,12 +30,10 @@ function App() {
 
 const FlexContainer = Styled.div`
   display: flex;
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   justify-content: space-around;
   font-size: calc(10px + 2vmin);
-  color: white;
 `;
 
 export default App;
