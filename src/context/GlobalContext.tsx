@@ -7,6 +7,7 @@ interface Props {
 interface Theme {
   icon: string;
   theme: { color: string; backgroundColor: string };
+  imgUrl?: string;
 }
 interface GlobalValue {
   cities: string[];
@@ -22,7 +23,7 @@ const GlobalContext = createContext<GlobalValue>({
   cities: [],
   setCities: () => {},
   selectedCity: '',
-  weatherTheme: { icon: '', theme: { color: '', backgroundColor: '' } },
+  weatherTheme: { icon: '', theme: { color: '', backgroundColor: '' }, imgUrl: '' },
   setWeatherTheme: () => {},
   setSelectedCity: () => '',
   handleCityClick: () => {},
@@ -35,6 +36,7 @@ function GlobalProvider({ children }: Props) {
   const [weatherTheme, setWeatherTheme] = useState<Theme>({
     icon: '☀',
     theme: { color: '#FFA820', backgroundColor: '#FFF8EE' },
+    imgUrl: '',
   });
 
   useEffect(() => {
