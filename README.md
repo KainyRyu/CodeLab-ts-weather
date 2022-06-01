@@ -8,8 +8,9 @@
 ### features
 - Show default location's current weather
 - See other locations weather by clicking the location on the list
-- Add new locations -> probably in localstorage
+- Add new locations -> in localstorage
 - Delete locations
+- Change color theme by the weather
 
 
 
