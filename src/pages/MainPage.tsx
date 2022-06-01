@@ -16,9 +16,9 @@ export default function Main() {
 
   return (
     <Flex theme={weatherTheme.theme}>
-      <p>TS Weather</p>
-      {selectedCity.length > 0 && <SelectedCity selectedCity={selectedCity} />}
+      <h1>TS Weather</h1>
       <LocationList />
+      {selectedCity.length > 0 && <SelectedCity selectedCity={selectedCity} />}
     </Flex>
   );
 }
@@ -37,7 +37,7 @@ const Flex = Styled.div<Props>`
   width: 100%;
   padding: 30vw;
   
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     padding: 10vw;
     flex-flow: row;
     justify-content: space-evenly;

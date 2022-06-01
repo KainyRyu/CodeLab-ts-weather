@@ -14,7 +14,7 @@ export const weatherThemes = {
   },
   clear: {
     icon: '☀',
-    theme: { color: '#DFF1FF', backgroundColor: '#A8CAFD' },
+    theme: { color: '#FFA820', backgroundColor: '#FFF8EE' },
     imgUrl:
       'https://help.apple.com/assets/6222428998C2CE34C75A5252/6222428B98C2CE34C75A5267/en_US/35c778528f79f2aa038b07526447f606.png',
   },
@@ -32,7 +32,7 @@ export const weatherThemes = {
   },
   cloud: {
     icon: '☁',
-    theme: { color: '#A8CAFD', backgroundColor: '#E1E1E1' },
+    theme: { color: '#E1E1E1', backgroundColor: '#A8CAFD' },
     imgUrl:
       'https://help.apple.com/assets/6222428998C2CE34C75A5252/6222428B98C2CE34C75A5267/en_US/b83a352b1228b6e4c2f29e916941654e.png',
   },

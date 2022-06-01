@@ -47,16 +47,6 @@ export default function LocationList() {
 
   return (
     <Container>
-      {cities?.map((city: string) => (
-        <Row key={city}>
-          <div onClick={() => handleCityClick(city)} data-name={city}>
-            {city}
-          </div>
-          <button onClick={handleDeleteButtonClick} name={city} data-testid={city}>
-            X
-          </button>
-        </Row>
-      ))}
       <input
         placeholder="add new location"
         type="text"
@@ -68,6 +58,16 @@ export default function LocationList() {
         value={value}
       />
       <button onClick={handleAddButton}>add</button>
+      {cities?.map((city: string) => (
+        <Row key={city}>
+          <div onClick={() => handleCityClick(city)} data-name={city}>
+            {city}
+          </div>
+          <button onClick={handleDeleteButtonClick} name={city} data-testid={city}>
+            X
+          </button>
+        </Row>
+      ))}
     </Container>
   );
 }
