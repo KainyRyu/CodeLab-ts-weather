@@ -3,15 +3,9 @@
 exports[`<App /> renders component correctly 1`] = `
 .c2 {
   width: 300px;
-  height: 300px;
-  border: white 1px solid;
 }
 
 .c3 {
-  width: 300px;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25,6 +19,8 @@ exports[`<App /> renders component correctly 1`] = `
 }
 
 .c1 {
+  color: #FFA820;
+  background-color: #FFF8EE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -32,6 +28,8 @@ exports[`<App /> renders component correctly 1`] = `
   -webkit-flex-flow: column;
   -ms-flex-flow: column;
   flex-flow: column;
+  width: 100%;
+  padding: 30vw;
 }
 
 .c0 {
@@ -39,7 +37,6 @@ exports[`<App /> renders component correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #282c34;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,7 +47,19 @@ exports[`<App /> renders component correctly 1`] = `
   -ms-flex-pack: space-around;
   justify-content: space-around;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+@media (min-width:700px) {
+  .c1 {
+    padding: 10vw;
+    -webkit-flex-flow: row;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
 }
 
 <div>
@@ -63,29 +72,22 @@ exports[`<App /> renders component correctly 1`] = `
       <div
         class="c1"
       >
-        <div>
-          Here, Now
-        </div>
+        <h1>
+          TS Weather
+        </h1>
         <div
           class="c2"
         >
-          <div>
-            London
-          </div>
-          <div>
-            17.24
-            ℃
-          </div>
-          <div>
-            5.66
-            m/s
-          </div>
-        </div>
-        <div
-          class="c3"
-        >
+          <input
+            placeholder="add new location"
+            type="text"
+            value=""
+          />
+          <button>
+            add
+          </button>
           <div
-            class="c4"
+            class="c3"
           >
             <div
               data-name="london"
@@ -100,7 +102,7 @@ exports[`<App /> renders component correctly 1`] = `
             </button>
           </div>
           <div
-            class="c4"
+            class="c3"
           >
             <div
               data-name="berlin"
@@ -115,7 +117,7 @@ exports[`<App /> renders component correctly 1`] = `
             </button>
           </div>
           <div
-            class="c4"
+            class="c3"
           >
             <div
               data-name="seoul"
@@ -130,7 +132,7 @@ exports[`<App /> renders component correctly 1`] = `
             </button>
           </div>
           <div
-            class="c4"
+            class="c3"
           >
             <div
               data-name="paris"
@@ -145,7 +147,7 @@ exports[`<App /> renders component correctly 1`] = `
             </button>
           </div>
           <div
-            class="c4"
+            class="c3"
           >
             <div
               data-name="prague"
@@ -159,14 +161,9 @@ exports[`<App /> renders component correctly 1`] = `
               X
             </button>
           </div>
-          <input
-            placeholder="add new location"
-            type="text"
-            value=""
-          />
-          <button>
-            add
-          </button>
+        </div>
+        <div>
+          loading...
         </div>
       </div>
     </div>

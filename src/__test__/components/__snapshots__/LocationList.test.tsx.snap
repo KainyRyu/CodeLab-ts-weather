@@ -5,6 +5,14 @@ exports[`<LocationList/> adds city 1`] = `
   <div
     class="sc-bdvvtL cgThLl"
   >
+    <input
+      placeholder="add new location"
+      type="text"
+      value="hongkong"
+    />
+    <button>
+      add
+    </button>
     <div
       class="sc-gsDKAQ jAJQy"
     >
@@ -80,14 +88,6 @@ exports[`<LocationList/> adds city 1`] = `
         X
       </button>
     </div>
-    <input
-      placeholder="add new location"
-      type="text"
-      value="hongkong"
-    />
-    <button>
-      add
-    </button>
   </div>
 </div>
 `;
@@ -97,6 +97,14 @@ exports[`<LocationList/> deletes city 1`] = `
   <div
     class="sc-bdvvtL cgThLl"
   >
+    <input
+      placeholder="add new location"
+      type="text"
+      value=""
+    />
+    <button>
+      add
+    </button>
     <div
       class="sc-gsDKAQ jAJQy"
     >
@@ -157,14 +165,6 @@ exports[`<LocationList/> deletes city 1`] = `
         X
       </button>
     </div>
-    <input
-      placeholder="add new location"
-      type="text"
-      value=""
-    />
-    <button>
-      add
-    </button>
   </div>
 </div>
 `;
@@ -174,6 +174,14 @@ exports[`<LocationList/> gets location list from globalProvider 1`] = `
   <div
     class="sc-bdvvtL cgThLl"
   >
+    <input
+      placeholder="add new location"
+      type="text"
+      value=""
+    />
+    <button>
+      add
+    </button>
     <div
       class="sc-gsDKAQ jAJQy"
     >
@@ -249,14 +257,6 @@ exports[`<LocationList/> gets location list from globalProvider 1`] = `
         X
       </button>
     </div>
-    <input
-      placeholder="add new location"
-      type="text"
-      value=""
-    />
-    <button>
-      add
-    </button>
   </div>
 </div>
 `;

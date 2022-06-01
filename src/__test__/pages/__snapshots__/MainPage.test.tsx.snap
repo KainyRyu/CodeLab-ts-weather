@@ -3,28 +3,13 @@
 exports[`<MainPage/> renders component correctly 1`] = `
 <div>
   <div
-    class="sc-hKwDye hwefAq"
+    class="sc-eCImPb kAZuMp"
   >
-    <div>
-      Here, Now
-    </div>
+    <h1>
+      TS Weather
+    </h1>
     <div
-      class="sc-bdvvtL hJgGXa"
-    >
-      <div>
-        London
-      </div>
-      <div>
-        17.24
-        ℃
-      </div>
-      <div>
-        5.66
-        m/s
-      </div>
-    </div>
-    <div
-      class="sc-gsDKAQ dGtaUY"
+      class="sc-bdvvtL cgThLl"
     >
       <input
         placeholder="add new location"
