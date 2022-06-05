@@ -13,8 +13,22 @@ import { GlobalProvider } from 'context/GlobalContext';
 //   - 각자의 방식으로 저장
 // - 지역 삭제
 
+const FlexContainer = Styled.div`
+  display: flex;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+`;
+
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <GlobalProvider>
@@ -27,13 +41,5 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-const FlexContainer = Styled.div`
-  display: flex;
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-`;
 
 export default App;
