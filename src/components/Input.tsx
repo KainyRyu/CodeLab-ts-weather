@@ -29,19 +29,25 @@ const Button = Styled.input`
 export default function Input() {
   const { cities, setCities } = useGlobalContext();
   const [value, setValue] = useState('');
+  const [placeHolder, setPlaceholder] = useState('Add new location');
 
   const handleInputChange = (value: string) => {
     setValue(value);
   };
 
   const handleAddButton = () => {
-    setCities([...cities, value]);
+    if (cities.includes(value)) {
+      setPlaceholder(`${value} already exists`);
+      setValue('');
+    } else {
+      setCities([...cities, value]);
+    }
   };
 
   return (
     <Container>
       <InputBox
-        placeholder="add new location"
+        placeholder={placeHolder}
         type="text"
         onChange={(e) => {
           if (typeof handleInputChange === 'function') {
