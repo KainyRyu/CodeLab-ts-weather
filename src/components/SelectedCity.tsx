@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Styled from 'styled-components';
-import useWeather from 'hooks/useWeather';
-import { useEffect } from 'react';
 import { useGlobalContext } from 'context/GlobalContext';
+import useWeather from 'hooks/useWeather';
 import { weatherThemes } from 'lib/config';
+import Img404 from 'assets/404.png';
 
 interface Props {
   readonly selectedCity: string;
@@ -26,6 +26,22 @@ interface Error {
   };
   readonly toJSON: () => void;
 }
+
+const WeatherImg = Styled.img`
+  width: 100px;
+  height: 100px
+`;
+
+const Li = Styled.span`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const LostImg = Styled.img`
+  width: 400px;
+  height: auto;
+`;
+
 export default function SelectedCity({ selectedCity }: Props) {
   const { weatherTheme, setWeatherTheme } = useGlobalContext();
 
@@ -49,27 +65,31 @@ export default function SelectedCity({ selectedCity }: Props) {
   };
 
   useEffect(() => {
-    !isLoading && setWeatherTheme(theme(data.weather[0].id)!);
-  }, [isLoading, data]);
+    !isLoading && data && setWeatherTheme(theme(data?.weather[0].id)!);
+  }, [isLoading, data, setWeatherTheme]);
 
   return isLoading ? (
     <div>loading...</div>
   ) : isError ? (
     <div>
-      <div>selected city : {selectedCity}</div>
-      <div>
+      <h3>
+        {selectedCity} : {(error as Error).response.data.message}
+      </h3>
+      <LostImg src={Img404} alt="404" />
+      {/* <div>
         {(error as Error).response.data.cod}: {(error as Error).response.data.message}
-      </div>
+      </div> */}
     </div>
   ) : (
     <div>
-      <p>{data.name}</p>
-      <h1>{weatherTheme.icon}</h1>
+      <h1>{data.name}</h1>
+      <WeatherImg src={weatherTheme.imgUrl} alt="weather" />
+      {/* weather api's icon
       <WeatherImg
         src={` http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
         alt="weather"
-      />
-      <div>{data.weather[0].main}</div>
+      /> */}
+      <h3>{data.weather[0].main}</h3>
       <Li>
         <span>Temprature</span>
         <span>{data.main.temp}℃</span>
@@ -89,13 +109,3 @@ export default function SelectedCity({ selectedCity }: Props) {
     </div>
   );
 }
-
-const WeatherImg = Styled.img`
-  width: 100px;
-  height: 100px
-`;
-
-const Li = Styled.li`
-  display: flex;
-  justify-content: space-between;
-`;
