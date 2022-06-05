@@ -35,12 +35,19 @@ export default function Input() {
     setValue(value);
   };
 
+  const haldeKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleAddButton();
+    }
+  };
+
   const handleAddButton = () => {
     if (cities.includes(value)) {
-      setPlaceholder(`${value} already exists`);
+      setPlaceholder(`'${value}' already exists`);
       setValue('');
     } else {
       setCities([...cities, value]);
+      setValue('');
     }
   };
 
@@ -49,6 +56,7 @@ export default function Input() {
       <InputBox
         placeholder={placeHolder}
         type="text"
+        onKeyPress={haldeKeyPress}
         onChange={(e) => {
           if (typeof handleInputChange === 'function') {
             handleInputChange(e.target.value);
