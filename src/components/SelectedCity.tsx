@@ -27,6 +27,19 @@ interface Error {
   readonly toJSON: () => void;
 }
 
+const Container = Styled.div`
+  padding: 20px;
+  height: fit-content;
+  width: 60vw;
+  border-radius: 15px;
+  box-shadow: -1px 0 .4em #00000025,  -1px 0 .4em #00000025,  1px 0 .4em  #00000025, 1px 0 .4em #00000025;
+  text-shadow: 1px 1px #00000075;
+  background: #ffffff33;
+  @media (min-width:700px){
+    width: 40vw;
+  }
+`;
+
 const WeatherImg = Styled.img`
   width: 100px;
   height: 100px
@@ -69,9 +82,9 @@ export default function SelectedCity({ selectedCity }: Props) {
   }, [isLoading, data, setWeatherTheme]);
 
   return isLoading ? (
-    <div>loading...</div>
+    <Container>loading...</Container>
   ) : isError ? (
-    <div>
+    <Container>
       <h3>
         {selectedCity} : {(error as Error).response.data.message}
       </h3>
@@ -79,9 +92,9 @@ export default function SelectedCity({ selectedCity }: Props) {
       {/* <div>
         {(error as Error).response.data.cod}: {(error as Error).response.data.message}
       </div> */}
-    </div>
+    </Container>
   ) : (
-    <div>
+    <Container>
       <h1>{data.name}</h1>
       <WeatherImg src={weatherTheme.imgUrl} alt="weather" />
       {/* weather api's icon
@@ -106,6 +119,6 @@ export default function SelectedCity({ selectedCity }: Props) {
         <span>wind</span>
         <span>{data.wind.speed}m/s</span>
       </Li>
-    </div>
+    </Container>
   );
 }

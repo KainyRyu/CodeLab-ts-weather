@@ -34,7 +34,7 @@ const Flex = Styled.div<Props>`
   padding: 30vw;
   
   @media (min-width: 700px) {
-    padding: 100px 5vw 0 5vw;
+    padding: 25vh 5vw 0 5vw;
     flex-flow: row;
     justify-content: space-evenly;
   }

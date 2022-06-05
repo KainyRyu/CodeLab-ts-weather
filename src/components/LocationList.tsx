@@ -5,7 +5,11 @@ import { getLocalStorage } from 'lib/helper';
 import Input from './Input';
 
 const Container = Styled.div`
-  width: 300px;
+  width: 60vw;
+  padding: 20px;
+  @media (min-width:700px){
+    width: 40vw;
+  }
 `;
 
 const FlexWrap = Styled.div`
