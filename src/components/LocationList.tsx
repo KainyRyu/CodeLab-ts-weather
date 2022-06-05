@@ -2,22 +2,46 @@ import React, { useEffect } from 'react';
 import Styled from 'styled-components';
 import { useGlobalContext } from 'context/GlobalContext';
 import { getLocalStorage } from 'lib/helper';
-import { useState } from 'react';
+import Input from './Input';
 
 const Container = Styled.div`
   width: 300px;
 `;
 
-const Row = Styled.div`
+const FlexWrap = Styled.div`
   display: flex;
-  justify-content: space-between;
-  border-bottom: white 1px solid;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+interface Props {
+  readonly selectedCity: boolean;
+}
+
+const Row = Styled.span<Props>`
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding: 0;
+  margin: 5px;
+  line-height: 1;
   margin-top: 5px;
+  font-weight: ${(props) => (props.selectedCity ? 700 : 400)}
+`;
+
+const DeleteButton = Styled.button`
+  align-self: flex-end;
+  border-radius: 30px;
+  border: black 1px solid;
+  padding: 0;
+  font-size: 10px;
+  width: 14px;
+  height: 14px;
+  background: none;
 `;
 
 export default function LocationList() {
-  const { cities, setCities, handleCityClick } = useGlobalContext();
-  const [value, setValue] = useState('');
+  const { cities, selectedCity, setCities, handleCityClick } = useGlobalContext();
 
   const handleDeleteButtonClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -37,37 +61,21 @@ export default function LocationList() {
     setCities(getCityList());
   }, []);
 
-  const handleInputChange = (value: string) => {
-    setValue(value);
-  };
-
-  const handleAddButton = () => {
-    setCities([...cities, value]);
-  };
-
   return (
     <Container>
-      <input
-        placeholder="add new location"
-        type="text"
-        onChange={(e) => {
-          if (typeof handleInputChange === 'function') {
-            handleInputChange(e.target.value);
-          }
-        }}
-        value={value}
-      />
-      <button onClick={handleAddButton}>add</button>
-      {cities?.map((city: string) => (
-        <Row key={city}>
-          <div onClick={() => handleCityClick(city)} data-name={city}>
-            {city}
-          </div>
-          <button onClick={handleDeleteButtonClick} name={city} data-testid={city}>
-            X
-          </button>
-        </Row>
-      ))}
+      <Input />
+      <FlexWrap>
+        {cities?.map((city: string) => (
+          <Row key={city} selectedCity={selectedCity === city}>
+            <div onClick={() => handleCityClick(city)} data-name={city}>
+              {city}
+            </div>
+            <DeleteButton onClick={handleDeleteButtonClick} name={city} data-testid={city}>
+              X
+            </DeleteButton>
+          </Row>
+        ))}
+      </FlexWrap>
     </Container>
   );
 }
