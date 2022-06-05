@@ -26,7 +26,15 @@ const Row = Styled.span<Props>`
   margin: 5px;
   line-height: 1;
   margin-top: 5px;
-  font-weight: ${(props) => (props.selectedCity ? 700 : 400)}
+  ${(props) =>
+    props.selectedCity
+      ? `
+  font-weight: 800;
+  font-size: 1.5em;
+  text-shadow: -0.8px -0.8px 0 #00000088, 0.8px -0.8px 0 #00000088, -0.8px 0.8px 0 #00000088, 0.8px 0.8px 0 #00000088;
+  `
+      : ``}
+  
 `;
 
 const DeleteButton = Styled.button`

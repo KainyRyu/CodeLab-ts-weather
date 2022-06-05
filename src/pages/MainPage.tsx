@@ -11,24 +11,20 @@ import { useGlobalContext } from 'context/GlobalContext';
  *         - CRUD
  */
 
-export default function Main() {
-  const { selectedCity, weatherTheme } = useGlobalContext();
-
-  return (
-    <Flex theme={weatherTheme.theme}>
-      <h1>TS Weather</h1>
-      <LocationList />
-      {selectedCity.length > 0 && <SelectedCity selectedCity={selectedCity} />}
-    </Flex>
-  );
-}
-
 interface Props {
   theme: {
     color: string;
     background: string;
   };
 }
+
+const Header = Styled.h1`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  text-shadow: 3px 3px #00000099;
+`;
 
 const Flex = Styled.div<Props>`
   ${(props) => props.theme}
@@ -38,8 +34,20 @@ const Flex = Styled.div<Props>`
   padding: 30vw;
   
   @media (min-width: 700px) {
-    padding: 10vw;
+    padding: 100px 5vw 0 5vw;
     flex-flow: row;
     justify-content: space-evenly;
   }
 `;
+
+export default function Main() {
+  const { selectedCity, weatherTheme } = useGlobalContext();
+
+  return (
+    <Flex theme={weatherTheme.theme}>
+      <Header>TS Weather</Header>
+      {selectedCity.length > 0 && <SelectedCity selectedCity={selectedCity} />}
+      <LocationList />
+    </Flex>
+  );
+}
