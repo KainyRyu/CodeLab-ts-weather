@@ -30,7 +30,7 @@ const GlobalContext = createContext<GlobalValue>({
 });
 
 function GlobalProvider({ children }: Props) {
-  const cityListInit = ['london', 'berlin', 'seoul', 'paris', 'prague'];
+  const cityListInit = ['London', 'Berlin', 'Seoul', 'Paris', 'Prague'];
   const [cities, setCities] = useState(cityListInit);
   const [selectedCity, setSelectedCity] = useState('london');
   const [weatherTheme, setWeatherTheme] = useState<Theme>({
