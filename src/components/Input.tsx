@@ -43,14 +43,14 @@ export default function Input() {
   };
 
   const handleAddButton = () => {
+    const pascalCase = value.replace(value[0], value[0].toUpperCase());
     if (value.trim() === '') {
       setValue('');
       return;
-    } else if (cities.includes(value)) {
-      setPlaceholder(`'${value}' already exists`);
+    } else if (cities.includes(pascalCase)) {
+      setPlaceholder(`'${pascalCase}' already exists`);
       setValue('');
     } else {
-      const pascalCase = value.replace(value[0], value[0].toUpperCase());
       const secondWordIdx = pascalCase.indexOf(' ');
       const changeSecondWordToUpperCase = pascalCase.replace(
         pascalCase[secondWordIdx + 1],
