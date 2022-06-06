@@ -39,14 +39,28 @@ export default function Input() {
     if (event.key === 'Enter') {
       handleAddButton();
     }
+    return;
   };
 
   const handleAddButton = () => {
-    if (cities.includes(value)) {
+    if (value.trim() === '') {
+      setValue('');
+      return;
+    } else if (cities.includes(value)) {
       setPlaceholder(`'${value}' already exists`);
       setValue('');
     } else {
-      setCities([...cities, value]);
+      const pascalCase = value.replace(value[0], value[0].toUpperCase());
+      const secondWordIdx = pascalCase.indexOf(' ');
+      const changeSecondWordToUpperCase = pascalCase.replace(
+        pascalCase[secondWordIdx + 1],
+        pascalCase[secondWordIdx + 1].toUpperCase(),
+      );
+      if (secondWordIdx !== -1) {
+        setCities([...cities, changeSecondWordToUpperCase]);
+      } else {
+        setCities([...cities, pascalCase]);
+      }
       setValue('');
     }
   };
