@@ -1,8 +1,8 @@
-[TS-Weather](https://kainyryu.github.io/CodeLab-ts-weather/) - gh-pages
-
 # About CodeLab-weather-ts - On Going
 - Show weather information; Similar to a todo list project.
+- deployed(gh-pages) : [TS-Weather](https://kainyryu.github.io/CodeLab-ts-weather/)
 - using open api: [openweathermap](https://openweathermap.org/api)
+
 ### 🥅 : to get familiar with TS
 
 
