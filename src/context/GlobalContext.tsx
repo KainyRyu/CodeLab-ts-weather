@@ -13,6 +13,7 @@ interface GlobalValue {
   cities: string[];
   selectedCity: string;
   weatherTheme: Theme;
+
   setWeatherTheme: React.Dispatch<React.SetStateAction<Theme>>;
   setSelectedCity: React.Dispatch<React.SetStateAction<string>>;
   setCities: React.Dispatch<React.SetStateAction<string[]>>;
@@ -24,6 +25,7 @@ const GlobalContext = createContext<GlobalValue>({
   setCities: () => {},
   selectedCity: '',
   weatherTheme: { icon: '', theme: { color: '', backgroundColor: '' }, imgUrl: '' },
+
   setWeatherTheme: () => {},
   setSelectedCity: () => '',
   handleCityClick: () => {},
@@ -32,6 +34,7 @@ const GlobalContext = createContext<GlobalValue>({
 function GlobalProvider({ children }: Props) {
   const cityListInit = ['London', 'Berlin', 'Seoul', 'Paris', 'Prague'];
   const [cities, setCities] = useState(cityListInit);
+  // const { localLocation, setLocalLocation } = useState({ lat: 0, lon: 0 });
   const [selectedCity, setSelectedCity] = useState('london');
   const [weatherTheme, setWeatherTheme] = useState<Theme>({
     icon: '☀',
@@ -46,13 +49,27 @@ function GlobalProvider({ children }: Props) {
   const handleCityClick = (value: string) => {
     setSelectedCity(value);
   };
+  let data;
+  const success = (pos) => {
+    const crd = pos.coords;
+    console.log('crd----', crd);
+    // coords &&
+    data = { lat: crd.latitude.toFixed(4), lon: crd.longitude.toFixed(4) };
+  };
+  const error = (err) => {
+    console.log('err----', err);
+    console.log(`error ${err}`);
+  };
 
+  const localLocation = navigator.geolocation.getCurrentPosition(success, error);
+  console.log(data);
   return (
     <GlobalContext.Provider
       value={{
         cities,
         selectedCity,
         weatherTheme,
+        localLocation,
         setWeatherTheme,
         setSelectedCity,
         setCities,

@@ -1,7 +1,9 @@
 import Styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import { useGlobalContext } from 'context/GlobalContext';
+import { getWeatherByCords } from 'lib/apis';
 import LocationList from 'components/LocationList';
 import SelectedCity from 'components/SelectedCity';
-import { useGlobalContext } from 'context/GlobalContext';
 
 /**
  *
@@ -41,7 +43,14 @@ const Flex = Styled.div<Props>`
 `;
 
 export default function Main() {
-  const { selectedCity, weatherTheme } = useGlobalContext();
+  const { localLocation, weatherTheme } = useGlobalContext();
+
+  useEffect(() => {
+    console.log(localLocation);
+  }, [localLocation]);
+
+  const data = localLocation && getWeatherByCords(localLocation?.lat, localLocation?.lon);
+  console.log(data);
 
   return (
     <Flex theme={weatherTheme.theme}>

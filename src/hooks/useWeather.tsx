@@ -13,3 +13,14 @@ const getWeatherBycityname = async (cityname: string) => {
 export default function useWeather(cityname: string) {
   return useQuery(['post', cityname], () => getWeatherBycityname(cityname));
 }
+
+const getWeatherByCords = async (lat: number, lon: number) => {
+  const { data } = await axios.get(
+    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric`,
+  );
+  return data;
+};
+
+export function useWeatherByCoords(lat: number, lon: number) {
+  return useQuery(['location'], () => getWeatherByCords(lat, lon));
+}
