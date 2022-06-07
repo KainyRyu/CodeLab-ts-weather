@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/CodeLab-ts-weather/static/css/main.d711d894.css",
-    "main.js": "/CodeLab-ts-weather/static/js/main.1dca7084.js",
+    "main.js": "/CodeLab-ts-weather/static/js/main.4d27b59b.js",
     "static/js/787.17197779.chunk.js": "/CodeLab-ts-weather/static/js/787.17197779.chunk.js",
     "static/media/404.png": "/CodeLab-ts-weather/static/media/404.3c55318392dab7691b97.png",
     "index.html": "/CodeLab-ts-weather/index.html",
     "main.d711d894.css.map": "/CodeLab-ts-weather/static/css/main.d711d894.css.map",
-    "main.1dca7084.js.map": "/CodeLab-ts-weather/static/js/main.1dca7084.js.map",
+    "main.4d27b59b.js.map": "/CodeLab-ts-weather/static/js/main.4d27b59b.js.map",
     "787.17197779.chunk.js.map": "/CodeLab-ts-weather/static/js/787.17197779.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d711d894.css",
-    "static/js/main.1dca7084.js"
+    "static/js/main.4d27b59b.js"
   ]
 }
